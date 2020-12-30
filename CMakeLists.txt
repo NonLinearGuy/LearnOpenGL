@@ -62,6 +62,7 @@ set(CHAPTERS
     5.advanced_lighting
     6.pbr
     7.in_practice
+    guest_articles
 )
 
 set(1.getting_started
@@ -164,6 +165,10 @@ set(7.in_practice
     1.debugging
     2.text_rendering
     #3.2d_game
+)
+
+set(guest_articles
+    skeletal_animation
 )
 
 
