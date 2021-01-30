@@ -11,8 +11,10 @@
 class Animator
 {	
 public:
-	Animator::Animator(Animation* current):m_CurrentAnimation(current)
+	Animator::Animator(Animation* current)
 	{
+		m_CurrentAnimation = current;
+		m_CurrentTime = 0.0;
 		m_Transforms.reserve(100);
 		for (int i = 0; i < 100; i++)
 			m_Transforms.push_back(glm::mat4(1.0f));

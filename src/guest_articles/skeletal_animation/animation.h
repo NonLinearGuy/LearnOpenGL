@@ -32,7 +32,6 @@ public:
 		m_TicksPerSecond = animation->mTicksPerSecond;
 		aiMatrix4x4 globalTransformation = scene->mRootNode->mTransformation;
 		globalTransformation = globalTransformation.Inverse();
-		m_GlobalInverseTransform = AssimpGLMHelpers::ConvertMatrixToGLMFormat(globalTransformation);
 		ReadHeirarchyData(m_RootNode, scene->mRootNode);
 		SetupBones(animation, *model);
 	}
@@ -54,8 +53,6 @@ public:
 	}
 
 	
-	//getters
-	inline glm::mat4 GetGlobalInverse() { return m_GlobalInverseTransform; }
 	inline float GetTicksPerSecond() { return m_TicksPerSecond; }
 	inline float GetDuration() { return m_Duration;}
 	inline const AssimpNodeData& GetRootNode() { return m_RootNode; }
@@ -106,7 +103,6 @@ private:
 	}
 	float m_Duration;
 	int m_TicksPerSecond;
-	glm::mat4 m_GlobalInverseTransform;
 	std::vector<Bone> m_Bones;
 	AssimpNodeData m_RootNode;
 	std::map<std::string, BoneInfo> m_BoneInfoMap;
